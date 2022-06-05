@@ -1,3 +1,0 @@
-MNTC	MacroName	MDTC
-0	EVAL		0
-1	ADD1		5
