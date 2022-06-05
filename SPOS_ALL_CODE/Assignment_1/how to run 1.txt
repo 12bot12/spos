@@ -1,0 +1,4 @@
+1.run pass1 file by command
+  python pass1.py
+2.also create input file for assembley language
+3.output contain symbol table,literal table,pool table,intermediate code file

@@ -1,0 +1,2 @@
+1.run MacroPreprocessorPass1.py file
+2.output contain ALA,MNT,MDT,output file

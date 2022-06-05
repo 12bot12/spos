@@ -1,0 +1,4 @@
+1.lex test.l
+2.yacc -d test.y
+3.gcc lex.yy.c y.tab.c
+4.run ./a.out file

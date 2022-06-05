@@ -1,0 +1,4 @@
+1. flex test.l
+2. gcc lex.yy.c
+3. a.exe
+4. int a,b;

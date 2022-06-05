@@ -1,0 +1,4 @@
+1.lex P7.l
+2.yacc -d P7.y
+3.gcc lex.yy.c y.tab.c
+4.run ./a.out file
