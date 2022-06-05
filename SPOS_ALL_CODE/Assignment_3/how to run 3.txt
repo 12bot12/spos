@@ -1,2 +1,3 @@
-1.run MacroPreprocessorPass1.py file
-2.output contain ALA,MNT,MDT,output file
+put both pass1.py and input.txt file in same directory
+and use cd
+python3 pass1.py
