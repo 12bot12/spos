@@ -1,22 +1,24 @@
-%{ 
-   #include<stdio.h>
-   int yylex();	
-   int yyerror(); 
+%{
+#include<stdlib.h>
+#include<stdio.h>
+int yylex();
+int yyerror();
 %}
-%token TYPE ID SC COMMA NL
+%token TYPE COMMA SC ID NL;
 %%
-start: TYPE varlist SC NL {printf("statement valid \n");}
-varlist: varlist COMMA ID | ID;
+start : TYPE varlist SC NL
+	{printf("Input is valid");}
+	;
+varlist: varlist COMMA ID
+	|ID
+	;
 %%
-int main()
-{
-	yyparse();       
+int main(){
+yyparse();
 }
-int yyerror()
-{
- 	printf("InValid statement\n");
+int yyerror(){
+printf("Invalid Statement");
 }
-int yywrap()
-{
-   return 1;
+int yywrap(){
+return 1;
 }
