@@ -1,32 +1,38 @@
 %{
+  #include <stdlib.h>
+ 
 %}
-letter [A-Za-z]
+
+letter [A-Z a-z]
 digit [0-9]
-identifier {letter}({letter}|{digit})*
+identifier {letter}({letter}|{digit})
 number {digit}+(\.{digit}+)?
-punctuation [;|,|.|"|#|()|{}]
-operators [+|-|=|*|<|>]
+punctuation [;|:|,|.|"|'|()|{}]
+operators [+|-|*|=|<|>]
 keywords if|else|for|int|while|do|void
 literal \".*\"
 comment "//".*
 headerfile "#".*
 multicomment "/*".*"*/"
 %%
-
-{headerfile} {printf("\n Headerfile %s is found" ,yytext);}
-{keywords} {printf("\n keywords %s is found" ,yytext);}
-{identifier} {printf("\n identifier %s is found" ,yytext);}
-{number} {printf("\n number %s is found" ,yytext);}
-{punctuation} {printf("\n punctuation %s is found" ,yytext);}
-{literal} {printf("\n literal %s is found" ,yytext);}
-{operators} {printf("\n operators %s is found" ,yytext);}
-{comment} {printf("\n comment %s is found" ,yytext);}
-{multicomment} {printf("\n multicomment %s is found" ,yytext);}
+{headerfile} {printf("\nHeaderfile %s found", yytext);}
+{keywords} {printf("\nKeyword %s found", yytext);}
+{comment} {printf("\nComment %s found", yytext);}
+{multicomment} {printf("\nMulti-line comment %s found", yytext);}
+{literal} {printf("\nLiteral %s found", yytext);}
+{operators} {printf("\nOperators %s found", yytext);}
+{punctuation} {printf("\nPunctuation %s found",yytext);}
+{number} {printf("\nNumber %s found", yytext);}
+{identifier} {printf("\nIdentifier %s found", yytext);}
 %%
 
 int main()
-{ yylex();
-}
+{
+yylex(); }
+
 int yywrap()
-{ return 1;
+{
+return 1;
 }
+
+
