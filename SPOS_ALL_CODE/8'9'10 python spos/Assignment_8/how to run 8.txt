@@ -1,0 +1,4 @@
+1.run fcfs.py
+2.run priority.py
+3.run rr.py
+4.run sjf.py
